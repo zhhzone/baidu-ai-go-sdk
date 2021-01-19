@@ -138,7 +138,7 @@ func (vc *VoiceClient) TextToSpeech(txt string, params ...TTSParam) ([]byte, err
 	if !ok {
 		return nil, errors.New("No Content-Type Set.")
 	}
-	if contentType[0] == "audio/mp3" {
+	if contentType[0] == "audio/wav" {
 		respBody, err := ioutil.ReadAll(resp.Response().Body)
 		if err != nil {
 			return nil, err
