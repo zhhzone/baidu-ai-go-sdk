@@ -27,6 +27,7 @@ type TTSParams struct {
 	Pitch      int    `json:"pit"`
 	Volume     int    `json:"vol"`
 	Person     int    `json:"per"`
+	Aue 	   int    `json:"aue"`
 }
 
 type TTSParam func(params *TTSParams)
@@ -105,10 +106,11 @@ func (vc *VoiceClient) TextToSpeech(txt string, params ...TTSParam) ([]byte, err
 		Cuid:       cuid,
 		ClientType: 1,
 		Language:   "zh",
-		Speed:      5,
+		Speed:      8,
 		Pitch:      5,
 		Volume:     5,
 		Person:     0,
+		Aue: 		6,
 	}
 
 	for _, param := range params {
